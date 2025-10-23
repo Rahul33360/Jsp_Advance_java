@@ -1,5 +1,0 @@
-INDEX VERSION 1.134+C:\Users\KIIT\Desktop\File\Jspider\JAVA Advance\A4\.metadata\.plugins\org.eclipse.jdt.core
-85816668.index
-1865797976.index
-3914324644.index
-1726340687.index
