@@ -39,16 +39,15 @@ public class GuessTheNumber {
 			// Create Statement
 			Statement state = connection.createStatement();
 
-			// ✅ Correct SQL syntax (values should be inserted, not column names)
-			String sql = "INSERT INTO premium_student(age, name, score) VALUES (" + age + ", '" + name + "', " + score
-					+ ")";
+			// SQL syntax (values should be inserted, not column names)
+			String sql = "INSERT INTO premium_student values("+age+",'"+name+"',"+score+") ";
 
-			state.executeUpdate(sql); // ✅ use executeUpdate for insert/update/delete
+			state.execute(sql); // executeUpdate for insert/update/delete
 			System.out.println("Data inserted successfully!");
 
 			// Close resources
-			state.close();
-			connection.close();
+//			state.close();
+//			connection.close();
 		} catch (ClassNotFoundException | SQLException e) {
 			e.printStackTrace();
 		}
