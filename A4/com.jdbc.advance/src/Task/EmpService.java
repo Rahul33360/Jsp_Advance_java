@@ -5,6 +5,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Scanner;
 
 public class EmpService {
 	static String url = "jdbc:mysql://localhost:3306/cjd_a4?useSSL=false";
@@ -13,7 +14,7 @@ public class EmpService {
 	static Connection c;
 	static PreparedStatement pre;
 	static ResultSet res;
-
+	static Scanner s = new Scanner(System.in);
 	static {
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
@@ -76,6 +77,42 @@ public class EmpService {
 			e1.printStackTrace();
 		}
 
+	}
+
+	public static boolean update(int upId, int operation) {
+
+		try {
+			if (operation == 1) {
+				System.out.println("Enter the New EmpId ");
+				int newId = s.nextInt();
+				pre = c.prepareStatement("update emp set Empid=? where Empid=?");
+				pre.setInt(1, newId);
+				pre.setInt(2, upId);
+				pre.executeUpdate();
+				return true;
+
+			} else if (operation == 2) {
+				System.out.println("Enter the New EmpName ");
+				String name = s.next();
+				pre = c.prepareStatement("update emp set Empname=? where Empid=?");
+				pre.setString(1, name);
+				pre.setInt(2, upId);
+				pre.executeUpdate();
+				return true;
+			} else if (operation == 3) {
+				System.out.println("Enter the New EmpAge ");
+				int newage = s.nextInt();
+				pre = c.prepareStatement("update emp set Empage=? where Empid=?");
+				pre.setInt(1, newage);
+				pre.setInt(2, upId);
+				pre.executeUpdate();
+				return true;
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		return false;
 	}
 
 	public static boolean exit() {
