@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" id="WebApp_ID" version="4.0">
+  <display-name>TeluskoEx_1</display-name>
+
+
+  
+  <welcome-file-list>
+	    <welcome-file>HomePage.html</welcome-file>
+	</welcome-file-list>
+	 
+ 
+	<servlet>
+		<servlet-name>Adding</servlet-name>
+		<servlet-class>com.calculator.AddServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Adding</servlet-name>
+		<url-pattern>/add</url-pattern>
+	</servlet-mapping>
+
+
+	<!-- Subtracting -->
+	<servlet>
+		<servlet-name>Sub</servlet-name>
+		<servlet-class>com.calculator.SubServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Sub</servlet-name>
+		<url-pattern>/sub</url-pattern>
+	</servlet-mapping>
+
+
+	<!-- Multiply -->
+	<servlet>
+		<servlet-name>Multiply</servlet-name>
+		<servlet-class>com.calculator.MultipyServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Multiply</servlet-name>
+		<url-pattern>/multiply</url-pattern>
+	</servlet-mapping>
+
+
+	<!-- Divide -->
+	<servlet>
+		<servlet-name>Divide</servlet-name>
+		<servlet-class>com.calculator.DivideServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Divide</servlet-name>
+		<url-pattern>/divide</url-pattern>
+	</servlet-mapping>
+  
+  
+  
+</web-app>

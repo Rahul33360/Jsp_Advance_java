@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Calculator UI</title>
+
+	<style>
+		body {
+			margin: 0;
+			padding: 0;
+			background: #0d0f13;
+			font-family: "Segoe UI", sans-serif;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			height: 100vh;
+			color: #fff;
+		}
+
+		.container {
+			background: #1a1d24;
+			width: 360px;
+			padding: 30px;
+			border-radius: 18px;
+			box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
+			text-align: center;
+		}
+
+		h2 {
+			margin-bottom: 25px;
+			font-weight: 500;
+			color: #4da8ff;
+			letter-spacing: 1px;
+		}
+
+		h5 {
+			margin-top: 20px;
+			margin-bottom: 5px;
+			font-weight: 400;
+			color: #4da8ff;
+			letter-spacing: 1px;
+		}
+
+		input {
+			width: 90%;
+			padding: 14px;
+			margin-bottom: 18px;
+			border-radius: 10px;
+			background: #262a32;
+			border: 1px solid #3a3f49;
+			color: #fff;
+			font-size: 17px;
+			outline: none;
+			transition: 0.2s;
+		}
+
+		input:focus {
+			border-color: #4da8ff;
+			background: #2d323c;
+		}
+
+		.btn-group {
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			gap: 15px;
+			margin-top: 15px;
+		}
+
+		.btn-link {
+			padding: 14px;
+			background: #4da8ff;
+			color: #000;
+			text-decoration: none;
+			border-radius: 10px;
+			font-size: 17px;
+			font-weight: bold;
+			display: block;
+			text-align: center;
+			transition: 0.25s;
+		}
+
+		.btn-link:hover {
+			background: #77c4ff;
+		}
+	</style>
+
+</head>
+
+<body>
+
+	<div class="container">
+		<h2>Calculator</h2>
+		<!-- 
+    <form action="" method="get">
+        <input name="num1" type="number" placeholder="Enter first number" required>
+        <input name="num2" type="number" placeholder="Enter second number" required>
+    </form>
+ -->
+		<div class="btn-group">
+			<a class="btn-link" href="Add.html">Add</a> <a class="btn-link" href="Subtract.html">Subtract</a> <a
+				class="btn-link" href="Multiply.html">Multiply</a> <a class="btn-link" href="Divide.html">Divide</a>
+		</div>
+		<h5>Choose one Option</h5>
+	</div>
+
+</body>
+
+</html>
