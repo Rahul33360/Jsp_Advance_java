@@ -162,7 +162,7 @@
              Note: The pattern used is equivalent to using pattern="common" -->
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 
-      <Context docBase="TeluskoEx_1" path="/TeluskoEx_1" reloadable="true" source="org.eclipse.jst.jee.server:TeluskoEx_1"/><Context docBase="LoginProject" path="/LoginProject" reloadable="true" source="org.eclipse.jst.jee.server:LoginProject"/><Context docBase="FirstExample" path="/FirstExample" reloadable="true" source="org.eclipse.jst.jee.server:FirstExample"/><Context docBase="ServletsInterCommunication" path="/ServletsInterCommunication" reloadable="true" source="org.eclipse.jst.jee.server:ServletsInterCommunication"/></Host>
+      <Context docBase="TeluskoEx_1" path="/TeluskoEx_1" reloadable="true" source="org.eclipse.jst.jee.server:TeluskoEx_1"/><Context docBase="LoginProject" path="/LoginProject" reloadable="true" source="org.eclipse.jst.jee.server:LoginProject"/><Context docBase="FirstExample" path="/FirstExample" reloadable="true" source="org.eclipse.jst.jee.server:FirstExample"/><Context docBase="ServletsInterCommunication" path="/ServletsInterCommunication" reloadable="true" source="org.eclipse.jst.jee.server:ServletsInterCommunication"/><Context docBase="JSPExample" path="/JSPExample" reloadable="true" source="org.eclipse.jst.jee.server:JSPExample"/></Host>
     </Engine>
   </Service>
 </Server>

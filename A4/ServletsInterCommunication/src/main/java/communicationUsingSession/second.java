@@ -5,6 +5,7 @@ import java.io.PrintWriter;
 //import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -16,8 +17,10 @@ public class second extends HttpServlet {
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 //		ServletContext sc = getServletContext();
 		PrintWriter p =  resp.getWriter();
-		HttpSession sc = req.getSession();
-		String ocap = (String) sc.getAttribute("OriginalCap");
+//		HttpSession sc = req.getSession();
+		Cookie[] c = req.getCookies();
+//		String ocap = (String) sc.getAttribute("OriginalCap");
+		String ocap = c[0].getValue();
 		String s = req.getParameter("cap");
 //		System.out.println(s);
 		
@@ -26,8 +29,11 @@ public class second extends HttpServlet {
 		}
 		
 		else {
-			req.getRequestDispatcher("first").include(req, resp);
-			p.println("<html><body><h2>IncorrectCaptcha</h2></body></html>");
+			req.setAttribute("result", "failed");
+			req.getRequestDispatcher("first").forward(req, resp);
+			
+//			req.getRequestDispatcher("first").include(req, resp);
+//			p.println("<html><body><h2>IncorrectCaptcha</h2></body></html>");
 		}
 		
 	}
