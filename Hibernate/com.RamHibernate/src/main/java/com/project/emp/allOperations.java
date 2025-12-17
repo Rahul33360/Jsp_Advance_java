@@ -39,9 +39,15 @@ public class allOperations {
 
 		System.out.print("Enter Your Gender ");
 		e.setGender(sc.next().toUpperCase().charAt(0));
+		
 
-		System.out.print("Enter The Grade ");
-		e.setGrade(sc.next().toUpperCase().charAt(0));
+		System.out.print("Enter The Marks ");
+		e.setMarks(sc.nextInt());
+		
+		/*
+		 * System.out.print("Enter The Grade ");
+		 * e.setGrade(sc.next().toUpperCase().charAt(0));
+		 */
 
 		transaction.begin();
 		entityManager.persist(e);
@@ -103,14 +109,31 @@ public class allOperations {
 	}
 
 	public static void fetchByGrade() {
-		System.out.print("Here are all Employee Details: ");
-		char ch = sc.next().toUpperCase().charAt(0);
-		String hql = "Select e from emp e where e.grade=?1";
-		Query query = entityManager.createQuery(hql);
-		Query setParameter = query.setParameter(1, ch);
-		List<emp> resultList = query.getResultList();
-		for (emp s : resultList)
-			System.out.println(s.toString());
+	    System.out.print("Enter Grade (O/A/B/C/D/E/F): ");
+	    char ch = sc.next().toUpperCase().charAt(0);
+	    int min = 0, max = 0;
+	    switch (ch) {
+	        case 'O': min = 91; max = 100; break;
+	        case 'A': min = 81; max = 90;  break;
+	        case 'B': min = 71; max = 80;  break;
+	        case 'C': min = 61; max = 70;  break;
+	        case 'D': min = 51; max = 60;  break;
+	        case 'E': min = 41; max = 50;  break;
+	        case 'F': min = 0;  max = 40;  break;
+	        default:
+	            System.out.println("Invalid Grade!");
+	            return;
+	    }
+
+	    String hql = "SELECT e FROM emp e WHERE e.marks BETWEEN :min AND :max";
+	    Query query = entityManager.createQuery(hql);
+	    query.setParameter("min", min);
+	    query.setParameter("max", max);
+
+	    List<emp> resultList = query.getResultList();
+
+	    for (emp s : resultList)
+	        System.out.println(s.toString());
 	}
 
 	public static void updateEmpById() {

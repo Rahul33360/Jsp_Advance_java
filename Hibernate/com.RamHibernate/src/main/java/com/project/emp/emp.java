@@ -12,7 +12,8 @@ public class emp {
 	String mobile;
 	char gender;
 	String email;
-	char grade;
+//	char grade;
+	int marks;
 
 	public emp() {
 	}
@@ -64,19 +65,28 @@ public class emp {
 	public void setEmail(String email) {
 		this.email = email;
 	}
+	
+	
 
-	public char getGrade() {
-		return grade;
+	public int getMarks() {
+		return marks;
 	}
 
+	public void setMarks(int marks) {
+		this.marks = marks;
+	}
+
+	/*
+	 * public char getGrade() { return grade; }
+	 
 	public void setGrade(char grade) {
 		this.grade = grade;
 	}
-
+*/
 	@Override
 	public String toString() {
 		return "emp [ Id= " + id + ", Name= " + name +", Age= " + age + ", Mobile=" + mobile + ", Gender= " + gender
-				+ ", Email= " + email + ", Grade= " + grade + "]";
+				+ ", Email= " + email + ", Marks= " + marks + "]";
 	}
 
 }

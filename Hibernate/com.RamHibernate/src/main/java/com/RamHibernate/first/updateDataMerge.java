@@ -12,7 +12,6 @@ public class updateDataMerge {
 		Student s = entityManager.find(Student.class, 1);
 		entityManager.close();
 		
-		
 		EntityManager entityManager2 = entityManagerFactory.createEntityManager();
 		entityManager2.getTransaction().begin();
 		Student merge = entityManager2.merge(s);
